@@ -11,8 +11,8 @@ const initialState = {
     nameFilter: "",
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    test: "xD",
-    counter: 0,
+    darkmode: false
+
 }
 
 export const fetchCountries = createAsyncThunk('posts/fetchCountries', async () => {
@@ -25,10 +25,8 @@ const countriesSlice = createSlice({
     initialState,
     reducers: {
 
-        test(state) {
-            console.log("test xd")
-            state.counter++
-            console.log(state.counter)
+        darkModeToggle(state) {
+            state.darkmode = !state.darkmode
         },
 
         searchByName(state,action) {
@@ -89,6 +87,6 @@ const countriesSlice = createSlice({
 
 
 
-export const {test, searchByName, updateCountries, searchByRegion} = countriesSlice.actions
+export const {darkModeToggle, searchByName, updateCountries, searchByRegion} = countriesSlice.actions
 
 export default countriesSlice.reducer

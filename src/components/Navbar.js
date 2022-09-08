@@ -1,15 +1,30 @@
 import classes from "./Navbar.module.css"
+import moonEmpty from "../images/moon empty.png"
+import moonFull from "../images/moon full.png"
+import {useDispatch, useSelector} from "react-redux";
+import {darkModeToggle} from "./countriesSlice"
+
+
 
 
 const Navbar = () => {
+
+    const dispatch = useDispatch();
+
+    const darkMode = useSelector(state => state.darkmode)
+
+    const darkModeHandler = () => {
+        dispatch(darkModeToggle())
+    }
+
     return (
 
-        <div className={classes.navbar}>
+        <div className={classes.navbar} onClick={darkModeHandler}>
             <p className={classes.navbar__title} >Where in the world?</p>
             <div className={classes.navbar__darkmode}>
 
-                <p>logo</p>
-                <p>Night mode</p>
+                <img  src={darkMode? moonFull : moonEmpty} alt="" className={classes.darkmode__logo}/>
+                <p  className={classes.darkmode__title}>{darkMode? "Dark Mode" : "Day Mode"}</p>
 
             </div>
         </div>
