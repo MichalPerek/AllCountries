@@ -33,9 +33,7 @@ const countriesSlice = createSlice({
 
         searchByName(state,action) {
             state.nameFilter = action.payload
-
-
-        },
+                    },
 
         searchByRegion(state,action) {
             state.regionFilter = action.payload

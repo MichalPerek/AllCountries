@@ -1,6 +1,6 @@
 import classes from "./Searchbar.module.css"
 import {useDispatch} from "react-redux";
-import {searchByName, searchByRegion, filterByName} from "./countriesSlice";
+import {searchByName, searchByRegion, filterByName, updateCountries} from "./countriesSlice";
 
 const Searchbar = () => {
 
@@ -9,15 +9,15 @@ const Searchbar = () => {
 
     const searchHandler = event => {
         let searchValue = event.target.value;
-        dispatch(searchByName(searchValue))
-        // dispatch(filterByName())
+        dispatch(searchByName(searchValue));
+        dispatch(updateCountries());
 
     }
 
     const selectHandler = event => {
         let selectValue = event.target.value;
-        dispatch(searchByRegion(selectValue))
-
+        dispatch(searchByRegion(selectValue));
+        dispatch(updateCountries());
     }
 
 
