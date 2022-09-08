@@ -13,13 +13,18 @@ const SingleCountry = (props) => {
             <img src={flag} alt="" className={classes.flag}/>
 
             <div className={classes.card__desc}>
-                <p className={classes.title}>{name}</p>
-                <p className={classes.desc}>Population: </p>
-                <p className={classes.val}>{population}</p>
-                <span className={classes.val}>Region: </span>
-                <span className={classes.desc}>{region}</span>
-                <span className={classes.desc}>Capital: </span>
-                <span className={classes.val}>{capital}</span>
+                <p className={classes.card__title}>{name}</p>
+                <ul>
+                    <li>
+                        <p><b>Population: </b>{population}</p>
+                    </li>
+                    <li>
+                        <p><b>Region: </b>{region}</p>
+                    </li>
+                    <li>
+                        <p><b>Capital: </b>{capital}</p>
+                    </li>
+                </ul>
             </div>
 
         </div>
