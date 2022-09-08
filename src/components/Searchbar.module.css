@@ -1,0 +1,19 @@
+.searchbar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.searchbar__searchpad{
+    width: 30%;
+
+
+}
+.searchbar__dropdown{
+    width: 30%;
+
+}
