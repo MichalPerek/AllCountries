@@ -23,6 +23,7 @@
     justify-content: center;
     align-items: center;
     /*margin-right: 1rem;*/
+    cursor: pointer;
 }
 
 .darkmode__logo {
