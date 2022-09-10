@@ -6,11 +6,8 @@ import classes from "./AllCountries.module.css"
 
 const AllCountries = () => {
 
-    const dispatch = useDispatch();
 
     const countries = useSelector(state => state.countries.countriesFiltered)
-
-
 
     return (
 

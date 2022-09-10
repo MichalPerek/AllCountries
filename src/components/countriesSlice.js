@@ -11,7 +11,7 @@ const initialState = {
     nameFilter: "",
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    darkmode: false
+    darkMode: false,
 
 }
 
@@ -26,7 +26,7 @@ const countriesSlice = createSlice({
     reducers: {
 
         darkModeToggle(state) {
-            state.darkmode = !state.darkmode
+            state.darkMode = !state.darkMode
         },
 
         searchByName(state,action) {
