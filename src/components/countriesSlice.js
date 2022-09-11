@@ -1,6 +1,7 @@
 import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 // import { sub } from 'date-fns';
 import axios from "axios";
+const _ = require("lodash");
 
 const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
 
@@ -11,7 +12,7 @@ const initialState = {
     nameFilter: "",
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    darkMode: false,
+    darkMode: "light",
 
 }
 
@@ -26,7 +27,14 @@ const countriesSlice = createSlice({
     reducers: {
 
         darkModeToggle(state) {
-            state.darkMode = !state.darkMode
+            if(state.darkMode === 'light')
+            {
+                state.darkMode = 'dark'
+            }
+            else if (state.darkMode === 'dark')
+            {
+                state.darkMode = 'light'
+            }
         },
 
         searchByName(state,action) {
@@ -41,6 +49,8 @@ const countriesSlice = createSlice({
             state.countriesFiltered = state.countries.filter(country =>
                 country.name.toLowerCase().includes(state.nameFilter.toLowerCase()) &&
                 (state.regionFilter ==="" || country.region === state.regionFilter))
+
+            state.countriesFiltered = _.sortBy(state.countriesFiltered, ['name'])
         },
 
 
@@ -74,7 +84,7 @@ const countriesSlice = createSlice({
                 }))
 
                 state.countries = state.countries.concat(fetchedCountries)
-                state.countriesFiltered = state.countries
+                state.countriesFiltered = _.sortBy(state.countries, ['name'])
 
             })
             .addCase(fetchCountries.rejected, (state, action) => {

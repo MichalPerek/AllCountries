@@ -1,4 +1,5 @@
 import classes from "./SingleCountry.module.css"
+import {useSelector} from "react-redux";
 
 const SingleCountry = (props) => {
 
@@ -8,8 +9,10 @@ const SingleCountry = (props) => {
     const region = props.region
     const capital = props.capital
 
+    const darkMode = useSelector((state) => state.countries.darkMode)
+
     return (
-        <div className={classes.card}>
+        <div className={classes.card} data-theme={darkMode}>
             <img src={flag} alt="" className={classes.flag}/>
 
             <div className={classes.card__desc}>

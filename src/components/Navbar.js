@@ -11,16 +11,17 @@ const Navbar = () => {
     const darkMode = useSelector((state) => state.countries.darkMode)
 
     const darkModeHandler = () => {
+
         dispatch(darkModeToggle())
     }
 
     return (
 
-        <div className={classes.navbar} onClick={darkModeHandler}>
+        <div className={classes.navbar} data-theme={darkMode}>
             <p className={classes.navbar__title}>Where in the world?</p>
-            <div className={classes.navbar__darkmode}>
-                <img  src={darkMode? moonFull : moonEmpty} alt="" className={classes.darkmode__logo}/>
-                <p  className={classes.darkmode__title}>{darkMode? "Dark Mode" : "Day Mode"}</p>
+            <div className={classes.navbar__darkmode} onClick={darkModeHandler}>
+                <img  src={(darkMode === 'light')? moonEmpty : moonFull } alt="" className={classes.darkmode__logo}/>
+                <p  className={classes.darkmode__title}>{(darkMode === 'light')? "Day Mode" : "Dark Mode"}</p>
             </div>
         </div>
     )

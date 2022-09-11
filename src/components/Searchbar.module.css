@@ -49,3 +49,19 @@ select {
     /*height: 1rem*/
 ;
 }
+
+@media screen and (max-width:900px) {
+
+    .searchbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .searchbar__searchpad {
+        width: 100%;
+    }
+
+    .searchbar__dropdown{
+        width: 100%;
+    }
+}

@@ -1,3 +1,17 @@
+:root {
+    --background_card: white;
+    --text-primary: #000;
+    --shadow-color: rgba(0, 0, 0, 0.19)
+
+}
+
+[data-theme='dark'] {
+    --background_card: rgba(14, 14, 14, 0.77);
+    --text-primary: #fff;
+    --shadow-color: rgba(255, 255, 255, 0.24)
+}
+
+
 .card {
     display: flex;
     flex-direction: column;
@@ -5,10 +19,10 @@
     align-items: flex-start;
     margin: 2rem;
     border-radius: 5px;
-    /*border: 1px solid black;*/
+    color: var(--text-primary);
     overflow: hidden;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--background_card);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 var(--shadow-color);
     width: 400px;
 }
 

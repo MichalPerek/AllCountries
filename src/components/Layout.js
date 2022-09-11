@@ -7,13 +7,13 @@ import {useSelector} from "react-redux";
 
 const Layout = () => {
 
-
+    const darkMode = useSelector((state) => state.countries.darkMode)
 
 
     return (
         <Fragment>
             <Navbar />
-            <div className={classes.content}>
+            <div className={classes.content} data-theme={darkMode}>
                 <Searchbar/>
                 <main>
                     <Outlet/>
