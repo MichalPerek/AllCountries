@@ -11,9 +11,9 @@ function App() {
 
             <Route index element={<AllCountries />} />
 
-            <Route path="post">
+            <Route path="countries">
 
-                <Route path=":countryId" element={<CountryDetails />} />
+                <Route path=":countryName" element={<CountryDetails />} />
 
             </Route>
 

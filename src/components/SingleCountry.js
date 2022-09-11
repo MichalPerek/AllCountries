@@ -1,5 +1,6 @@
 import classes from "./SingleCountry.module.css"
 import {useSelector} from "react-redux";
+import { Link } from "react-router-dom";
 
 const SingleCountry = (props) => {
 
@@ -12,11 +13,14 @@ const SingleCountry = (props) => {
     const darkMode = useSelector((state) => state.countries.darkMode)
 
     return (
+
         <div className={classes.card} data-theme={darkMode}>
             <img src={flag} alt="" className={classes.flag}/>
 
             <div className={classes.card__desc}>
+                <Link to={`/countries/${name}`} >
                 <p className={classes.card__title}>{name}</p>
+                </Link>
                 <ul>
                     <li>
                         <p><b>Population: </b>{population}</p>
@@ -31,6 +35,7 @@ const SingleCountry = (props) => {
             </div>
 
         </div>
+
     )
 }
 
