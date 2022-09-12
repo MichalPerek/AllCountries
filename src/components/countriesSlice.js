@@ -78,7 +78,10 @@ const countriesSlice = createSlice({
                     domain: result.tld,
                     currencies: result.currencies,
                     languages: result.languages,
-                    flag: result.flags.png
+                    flag: result.flags.png,
+                    borders: result.borders
+
+
 
 
                 }))

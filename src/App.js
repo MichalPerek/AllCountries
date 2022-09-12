@@ -11,9 +11,9 @@ function App() {
 
             <Route index element={<AllCountries />} />
 
-            <Route path="countries">
+            <Route path="countries/">
 
-                <Route path=":countryName" element={<CountryDetails />} />
+                <Route path=":countryName" exact element={<CountryDetails />} />
 
             </Route>
 
