@@ -1,6 +1,7 @@
 import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 // import { sub } from 'date-fns';
 import axios from "axios";
+const _ = require("lodash");
 
 const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
 
@@ -11,8 +12,8 @@ const initialState = {
     nameFilter: "",
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    test: "xD",
-    counter: 0,
+    darkMode: "light",
+
 }
 
 export const fetchCountries = createAsyncThunk('posts/fetchCountries', async () => {
@@ -25,17 +26,20 @@ const countriesSlice = createSlice({
     initialState,
     reducers: {
 
-        test(state) {
-            console.log("test xd")
-            state.counter++
-            console.log(state.counter)
+        darkModeToggle(state) {
+            if(state.darkMode === 'light')
+            {
+                state.darkMode = 'dark'
+            }
+            else if (state.darkMode === 'dark')
+            {
+                state.darkMode = 'light'
+            }
         },
 
         searchByName(state,action) {
             state.nameFilter = action.payload
-
-
-        },
+                    },
 
         searchByRegion(state,action) {
             state.regionFilter = action.payload
@@ -45,6 +49,8 @@ const countriesSlice = createSlice({
             state.countriesFiltered = state.countries.filter(country =>
                 country.name.toLowerCase().includes(state.nameFilter.toLowerCase()) &&
                 (state.regionFilter ==="" || country.region === state.regionFilter))
+
+            state.countriesFiltered = _.sortBy(state.countriesFiltered, ['name'])
         },
 
 
@@ -72,13 +78,16 @@ const countriesSlice = createSlice({
                     domain: result.tld,
                     currencies: result.currencies,
                     languages: result.languages,
-                    flag: result.flags.png
+                    flag: result.flags.png,
+                    borders: result.borders
+
+
 
 
                 }))
 
                 state.countries = state.countries.concat(fetchedCountries)
-                state.countriesFiltered = state.countries
+                state.countriesFiltered = _.sortBy(state.countries, ['name'])
 
             })
             .addCase(fetchCountries.rejected, (state, action) => {
@@ -91,6 +100,6 @@ const countriesSlice = createSlice({
 
 
 
-export const {test, searchByName, updateCountries, searchByRegion} = countriesSlice.actions
+export const {darkModeToggle, searchByName, updateCountries, searchByRegion} = countriesSlice.actions
 
 export default countriesSlice.reducer
