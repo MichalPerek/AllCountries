@@ -18,7 +18,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /*margin: 1rem;*/
     border-radius: 5px;
     color: var(--text-primary);
     overflow: hidden;
@@ -26,8 +25,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 var(--shadow-color);
     width: 100%;
     height: 100%;
-    margin-bottom: 40vh;
-    /*max-height: 100vh;*/
+
 }
 
 
@@ -65,9 +63,10 @@
 }
 
 .card__title {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    width: 100%;
+    /*margin-top: 0.5rem;*/
+    padding: 1rem;
 
 }
 a {
@@ -94,9 +93,26 @@ a:hover {
     /*margin: 0.75rem 0;*/
 }
 
+.card__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card__footer a {
+    align-self: center;
+    margin: 0 auto;
+
+
+}
+
+
 .card__button {
     cursor: pointer;
     text-decoration: none;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 @media (min-width: 450px){

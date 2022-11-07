@@ -18,18 +18,11 @@ const CountryDetails = () => {
 
 
     if (currentCountry) {
-        return (<div className={classes.card}>
-
-            {/*<Link to={`/`}>*/}
-            {/*    <button>Go back</button>*/}
-
-            {/*</Link>*/}
-
-            <div>
+        return (
+            <div className={classes.card}>
                 <div className={classes.card__flag}>
                     <img src={currentCountry.flag} alt="" className={classes.card__flag__image}/>
                 </div>
-                <div>
                     <p className={classes.card__title}>{currentCountry.name}</p>
                     <div className={classes.card__desc}>
                         <ul className={classes.card__info}>
@@ -40,7 +33,7 @@ const CountryDetails = () => {
                                 <b>Region: </b>{currentCountry.region}
                             </li>
                             <li>
-                                <b>Sub region: </b>{currentCountry.subRegion}
+                                <b>Sub region: </b>{currentCountry.subRegion ? currentCountry.subRegion : "-"}
                             </li>
                             <li>
                                 <b>Capital: </b>{currentCountry.capital}
@@ -67,11 +60,13 @@ const CountryDetails = () => {
                             </li>
                         </ul>
                     </div>
+                <div className={classes.card__footer}>
+                    <Link to={`/`}>
+                        <button className={classes.card__button}>Go back</button>
+                    </Link>
                 </div>
-            </div>
 
-
-        </div>)
+            </div>)
     } else {
         return (<h1>No country found :(</h1>)
     }
