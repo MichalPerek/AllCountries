@@ -15,7 +15,9 @@ const SingleCountry = (props) => {
     return (
 
         <div className={classes.card} data-theme={darkMode}>
-            <img src={flag} alt="" className={classes.card__flag}/>
+            <div className={classes.card__flag}>
+                <img src={flag} alt="" className={classes.card__flag__image}/>
+            </div>
 
             <div className={classes.card__desc}>
                 <Link className={classes.card__button} to={`/countries/${name}`} >
