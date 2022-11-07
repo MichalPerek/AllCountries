@@ -27,8 +27,8 @@ const Searchbar = () => {
         <div className={classes.searchbar}>
 
             <div className={classes.searchbar__searchpad}>
-                <img src={searchGlass} alt="" className={classes.icon} />
-                <input onChange={searchHandler} type="text" placeholder="Search for a country..." />
+                <img src={searchGlass} alt="" className={classes.icon}/>
+                <input onFocus={(e) => e.target.placeholder = ""}  onChange={searchHandler} type="text" placeholder="Search for a country..." />
             </div>
 
             <div className={classes.searchbar__dropdown}>
