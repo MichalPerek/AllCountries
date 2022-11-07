@@ -1,6 +1,7 @@
-import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, nanoid, createAsyncThunk} from "@reduxjs/toolkit";
 // import { sub } from 'date-fns';
 import axios from "axios";
+
 const _ = require("lodash");
 
 const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
@@ -8,6 +9,8 @@ const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
 const initialState = {
     countries: [],
     countriesFiltered: [],
+    currentCountry: "",
+    currentCountryBorders: [],
     regionFilter: "",
     nameFilter: "",
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
@@ -27,36 +30,43 @@ const countriesSlice = createSlice({
     reducers: {
 
         darkModeToggle(state) {
-            if(state.darkMode === 'light')
-            {
+            if (state.darkMode === 'light') {
                 state.darkMode = 'dark'
-            }
-            else if (state.darkMode === 'dark')
-            {
+            } else if (state.darkMode === 'dark') {
                 state.darkMode = 'light'
             }
         },
 
-        searchByName(state,action) {
+        searchByName(state, action) {
             state.nameFilter = action.payload
-                    },
+        },
 
-        searchByRegion(state,action) {
+        searchByRegion(state, action) {
             state.regionFilter = action.payload
         },
 
-        updateCountries (state){
+        updateCountries(state) {
             state.countriesFiltered = state.countries.filter(country =>
                 country.name.toLowerCase().includes(state.nameFilter.toLowerCase()) &&
-                (state.regionFilter ==="" || country.region === state.regionFilter))
+                (state.regionFilter === "" || country.region === state.regionFilter))
 
             state.countriesFiltered = _.sortBy(state.countriesFiltered, ['name'])
         },
 
+        updateCurrentCountry(state, action) {
+            console.log(action.payload)
+            if (action.payload) {
+                state.currentCountry = state.countries.find((country) => country.name === action.payload)
+            } else {
+                state.currentCountry = ""
+            }
+
+        }
+
 
     },
 
-    extraReducers(builder){
+    extraReducers(builder) {
         builder
             .addCase(fetchCountries.pending, (state, action) => {
                 state.status = 'loading'
@@ -66,7 +76,7 @@ const countriesSlice = createSlice({
 
                 console.log(action.payload)
 
-                const fetchedCountries = action.payload.map((result,index) => ({
+                const fetchedCountries = action.payload.map((result, index) => ({
 
                     id: index,
                     name: result.name.common,
@@ -79,9 +89,8 @@ const countriesSlice = createSlice({
                     currencies: result.currencies,
                     languages: result.languages,
                     flag: result.flags.png,
-                    borders: result.borders
-
-
+                    borders: result.borders,
+                    cca3: result.cca3
 
 
                 }))
@@ -99,7 +108,12 @@ const countriesSlice = createSlice({
 });
 
 
-
-export const {darkModeToggle, searchByName, updateCountries, searchByRegion} = countriesSlice.actions
+export const {
+    darkModeToggle,
+    searchByName,
+    updateCountries,
+    searchByRegion,
+    updateCurrentCountry
+} = countriesSlice.actions
 
 export default countriesSlice.reducer

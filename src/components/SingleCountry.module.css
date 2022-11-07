@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
 
 }
 
@@ -52,6 +52,13 @@
     border: solid 1px black;
 }
 
+.card__flag__image:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 #8e05c2;
+}
+
+.card__flag__link {
+    height: 100%;
+}
 
 .card__desc {
 

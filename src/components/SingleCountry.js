@@ -1,6 +1,6 @@
 import classes from "./SingleCountry.module.css"
 import {useSelector} from "react-redux";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const SingleCountry = (props) => {
 
@@ -16,12 +16,14 @@ const SingleCountry = (props) => {
 
         <div className={classes.card} data-theme={darkMode}>
             <div className={classes.card__flag}>
-                <img src={flag} alt="" className={classes.card__flag__image}/>
+                <Link to={`/countries/${name}`} className={classes.card__flag__link}>
+                    <img src={flag} alt="" className={classes.card__flag__image}/>
+                </Link>
             </div>
 
             <div className={classes.card__desc}>
-                <Link className={classes.card__button} to={`/countries/${name}`} >
-                <p className={classes.card__title}>{name}</p>
+                <Link className={classes.card__button} to={`/countries/${name}`}>
+                    <p className={classes.card__title}>{name}</p>
                 </Link>
                 <ul>
                     <li className={classes.card__info}>
