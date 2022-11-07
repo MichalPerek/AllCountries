@@ -10,7 +10,7 @@ Project inspired by frontend mentor task https://www.frontendmentor.io/challenge
 
 # Demo:
 
-https://marvelous-valkyrie-898a54.netlify.app/
+https://all-countries-dev.netlify.app/
 
 # Tech used:
 
