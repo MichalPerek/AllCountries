@@ -18,46 +18,47 @@ const CountryDetails = () => {
 
 
     if (currentCountry) {
-        return (<Fragment>
+        return (<div className={classes.card}>
 
-            <Link to={`/`}>
-                <button>Go back</button>
+            {/*<Link to={`/`}>*/}
+            {/*    <button>Go back</button>*/}
 
-            </Link>
+            {/*</Link>*/}
 
             <div>
-                <img src={currentCountry.flag} alt="" className={classes.flag}/>
+                <div className={classes.card__flag}>
+                    <img src={currentCountry.flag} alt="" className={classes.card__flag__image}/>
+                </div>
                 <div>
-                    <p>{currentCountry.name}</p>
-                    <div>
-                        <ul>
+                    <p className={classes.card__title}>{currentCountry.name}</p>
+                    <div className={classes.card__desc}>
+                        <ul className={classes.card__info}>
                             <li>
-                                <p><b>Population: </b>{currentCountry.population}</p>
+                                <b>Population: </b>{currentCountry.population}
                             </li>
                             <li>
-                                <p><b>Region: </b>{currentCountry.region}</p>
+                                <b>Region: </b>{currentCountry.region}
                             </li>
                             <li>
-                                <p><b>Sub region: </b>{currentCountry.subRegion}</p>
+                                <b>Sub region: </b>{currentCountry.subRegion}
                             </li>
                             <li>
-                                <p><b>Capital: </b>{currentCountry.capital}</p>
+                                <b>Capital: </b>{currentCountry.capital}
                             </li>
                             <li>
-                                <p><b>Top level domain: </b>{currentCountry.domain}</p>
+                                <b>Top level domain: </b>{currentCountry.domain}
                             </li>
                             <li>
-                                <p><b>Currencies: </b>
-                                    <ul>
-                                        {(Object.keys(currentCountry.currencies)).map((currency) =>
-                                            <li>{currency}</li>)}
-                                    </ul>
-                                </p>
+                                <b>Currencies: </b>
+                                <ul className={classes.card__info__list}>
+                                    {(Object.keys(currentCountry.currencies)).map((currency) =>
+                                        <li>{currency}</li>)}
+                                </ul>
                             </li>
                             <li>
 
                                 <p><b>Languages: </b>
-                                    <ul>
+                                    <ul className={classes.card__info__list}>
                                         {(Object.values(currentCountry.languages)).map((lang) => <li>{lang}</li>)}
                                     </ul>
 
@@ -70,9 +71,9 @@ const CountryDetails = () => {
             </div>
 
 
-        </Fragment>)
+        </div>)
     } else {
-        return (<h1>nothing</h1>)
+        return (<h1>No country found :(</h1>)
     }
 
 }

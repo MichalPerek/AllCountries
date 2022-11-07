@@ -5,6 +5,7 @@
     align-items: center;
     background-color: var(--background);
     height: 100%;
+    padding-bottom: 30%;
 }
 
 :root {
