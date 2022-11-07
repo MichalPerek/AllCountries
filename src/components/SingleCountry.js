@@ -15,20 +15,20 @@ const SingleCountry = (props) => {
     return (
 
         <div className={classes.card} data-theme={darkMode}>
-            <img src={flag} alt="" className={classes.flag}/>
+            <img src={flag} alt="" className={classes.card__flag}/>
 
             <div className={classes.card__desc}>
-                <Link to={`/countries/${name}`} >
+                <Link className={classes.card__button} to={`/countries/${name}`} >
                 <p className={classes.card__title}>{name}</p>
                 </Link>
                 <ul>
-                    <li>
+                    <li className={classes.card__info}>
                         <p><b>Population: </b>{population}</p>
                     </li>
-                    <li>
+                    <li className={classes.card__info}>
                         <p><b>Region: </b>{region}</p>
                     </li>
-                    <li>
+                    <li className={classes.card__info}>
                         <p><b>Capital: </b>{capital}</p>
                     </li>
                 </ul>
