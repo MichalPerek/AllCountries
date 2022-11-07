@@ -53,3 +53,8 @@
 .darkmode__title {
     font-size: 1.25rem;
 }
+
+.darkmode__title:hover{
+    color: #8e05c2;
+
+}
