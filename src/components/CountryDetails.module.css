@@ -12,6 +12,10 @@
     --shadow-color: rgba(255, 255, 255, 0.24)
 }
 
+p {
+    margin: 0;
+}
+
 
 .card {
     display: flex;
