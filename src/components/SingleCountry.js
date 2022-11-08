@@ -4,11 +4,11 @@ import {Link} from "react-router-dom";
 
 const SingleCountry = (props) => {
 
-    const flag = props.flag
-    const name = props.name
-    const population = props.population
-    const region = props.region
-    const capital = props.capital
+    const flag = props.flag? props.flag : " - "
+    const name = props.name? props.name : " - "
+    const population = props.population? props.population : " - "
+    const region = props.region? props.region : " - "
+    const capital = props.capital? props.capital : " - "
 
     const darkMode = useSelector((state) => state.countries.darkMode)
 
