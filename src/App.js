@@ -1,4 +1,3 @@
-import './App.css';
 import Layout from "./components/Layout";
 import {Route, Routes, BrowserRouter, useRoutes} from "react-router-dom";
 import AllCountries from "./components/AllCountries";

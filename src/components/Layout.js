@@ -8,17 +8,15 @@ const Layout = () => {
 
     const darkMode = useSelector((state) => state.countries.darkMode)
 
-
     return (
-        <Fragment>
-            <Navbar />
-            <div className={classes.content} data-theme={darkMode}>
-                <main>
+        <>
+            <Navbar/>
+            <main>
+                <div className={classes.content} data-theme={darkMode}>
                     <Outlet/>
-                </main>
-            </div>
-        </Fragment>
-    )
+                </div>
+            </main>
+        </>)
 }
 
 export default Layout
