@@ -1,6 +1,6 @@
 import classes from "./Navbar.module.css"
-import moonEmpty from "../images/moon empty.png"
 import moonFull from "../images/moon full.png"
+import sun from "../images/iconmonstr-weather-2-240.png"
 import {useDispatch, useSelector} from "react-redux";
 import {darkModeToggle} from "./countriesSlice"
 import {Link} from "react-router-dom";
@@ -23,7 +23,7 @@ const Navbar = () => {
                 <p className={classes.navbar__title}>Where in the world?</p>
             </Link>
             <div className={classes.navbar__darkmode} onClick={darkModeHandler}>
-                <img src={(darkMode === 'light') ? moonEmpty : moonFull} alt="" className={classes.darkmode__logo}/>
+                <img src={(darkMode === 'light') ? sun : moonFull} alt="" className={classes.darkmode__logo}/>
                 <p className={classes.darkmode__title}>{(darkMode === 'light') ? "Day Mode" : "Dark Mode"}</p>
             </div>
         </div>

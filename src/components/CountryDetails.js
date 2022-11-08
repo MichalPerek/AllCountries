@@ -23,7 +23,7 @@ const CountryDetails = () => {
                 <div className={classes.card__flag}>
                     <img src={currentCountry.flag} alt="" className={classes.card__flag__image}/>
                 </div>
-                    <p className={classes.card__title}>{currentCountry.name}</p>
+                    <div className={classes.card__title}>{currentCountry.name}</div>
                     <div className={classes.card__desc}>
                         <ul className={classes.card__info}>
                             <li>
