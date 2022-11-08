@@ -32,3 +32,4 @@ https://all-countries-dev.netlify.app/
 1. Fix CSS styling - variable size of searchbar dependant on search results
 2. Fix CSS styling - vertical mobile view has white margins (on narrow screens)
 3. Add list of border countries to country details page & map border countries as buttons with links to specific country page
+4. Fix Antarctica bug - can't display country details if some of fields are empty (eg. currency), bulletproof the display logic :)
