@@ -1,6 +1,6 @@
 # Where in the world?
 
-![image](https://user-images.githubusercontent.com/100487510/197133788-36135694-2c8a-4fd1-98b4-8c9dc69c6c4a.png)
+![image](https://user-images.githubusercontent.com/100487510/200444721-a1f63b33-b1b0-4686-8d66-2c27710d2c9d.png)
 
 
 # Description
@@ -22,11 +22,13 @@ https://all-countries-dev.netlify.app/
 
 # Preview:
 
-![image](https://user-images.githubusercontent.com/100487510/197133891-ca8fac20-ddcc-4d46-a5e8-64ff79c247e9.png)
+![image](https://user-images.githubusercontent.com/100487510/200444841-5dd398c2-5e6c-4501-82b2-5f7a9d8488f4.png)
 
-![image](https://user-images.githubusercontent.com/100487510/197134065-5fb7312f-fabe-4052-86e6-e5eb48e078a4.png)
+![image](https://user-images.githubusercontent.com/100487510/200444908-ab440928-8c4b-4853-b2cd-6d5cbb10e286.png)
 
-![image](https://user-images.githubusercontent.com/100487510/197133952-f8d6187c-6f47-46a9-9187-7e5374e19000.png)
+![image](https://user-images.githubusercontent.com/100487510/200445012-c916b376-15ff-47ff-9c8a-7327a09fa3f6.png)
 
 # To do's:
-1. Add single country page - when selected country is clicked on main page, then single country card is loaded, and takes up full screen, and displays more data
+1. Fix CSS styling - variable size of searchbar dependant on search results
+2. Fix CSS styling - vertical mobile view has white margins (on narrow screens)
+3. Add list of border countries to country details page & map border countries as buttons with links to specific country page
