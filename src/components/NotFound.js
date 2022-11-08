@@ -1,14 +1,13 @@
 import classes from "./NotFound.module.css"
 
 
-const NotFound = (props) => {
+const NotFound = () => {
 
 
     return (
 
-        <div >
-            hehehe
-
+        <div className={classes.card}>
+            Nothing was found :(
         </div>
 
     )
