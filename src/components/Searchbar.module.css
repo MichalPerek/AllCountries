@@ -1,12 +1,13 @@
 .searchbar {
     display: flex;
-    width: 50%;
+    width: 80%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
 }
+
 
 .searchbar__searchpad{
     width: 30vw;
@@ -16,12 +17,22 @@
     align-items: center;
     background-color: white;
     margin: 0.5rem;
-
+    border-radius: 10px;
 
 }
+
+.searchbar__searchpad:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #8e05c2;
+}
+
+
 .searchbar__dropdown{
     margin: 0.5rem;
     /*width: 25%;*/
+}
+
+.searchbar__dropdown:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #8e05c2;
 }
 
 input {

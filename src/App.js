@@ -5,22 +5,22 @@ import AllCountries from "./components/AllCountries";
 import CountryDetails from "./components/CountryDetails";
 
 function App() {
-  return (
-      <Routes>
-        <Route path="/" element={<Layout />}>
+    return (
+        <Routes>
+            <Route path="/" element={<Layout/>}>
 
-            <Route index element={<AllCountries />} />
+                <Route index element={<AllCountries/>}/>
 
-            <Route path="countries/">
+                <Route path="countries/">
 
-                <Route path=":countryName" exact element={<CountryDetails />} />
+                    <Route path=":countryName" exact element={<CountryDetails/>}/>
+
+                </Route>
 
             </Route>
+        </Routes>
 
-        </Route>
-    </Routes>
-
-  );
+    );
 }
 
 export default App;
