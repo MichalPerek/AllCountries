@@ -9,7 +9,7 @@
 }
 
 
-.searchbar__searchpad{
+.searchbar__searchpad {
     width: 30vw;
     display: flex;
     flex-direction: row;
@@ -26,7 +26,7 @@
 }
 
 
-.searchbar__dropdown{
+.searchbar__dropdown {
     margin: 0.5rem;
     /*width: 25%;*/
 }
@@ -53,15 +53,27 @@ select {
     border-radius: 5px;
 }
 
-.icon {
+.searchbar__searchpad__icon {
     width: 2.25rem;
     padding: 0.25rem;
     margin-left: 0.5rem;
-    /*height: 1rem*/
-;
 }
 
-@media screen and (max-width:900px) {
+.searchbar__searchpad__button {
+
+    border: none;
+    background-color: transparent;
+    padding-right: 1rem;
+    font-size: 2rem;
+}
+
+.searchbar__searchpad__button:hover {
+
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 900px) {
 
     .searchbar {
         width: 100%;
@@ -72,7 +84,7 @@ select {
         width: 100%;
     }
 
-    .searchbar__dropdown{
+    .searchbar__dropdown {
         width: 100%;
     }
 }

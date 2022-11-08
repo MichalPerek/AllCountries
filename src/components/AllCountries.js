@@ -19,7 +19,6 @@ const AllCountries = () => {
         dispatch(searchByName(""))
         dispatch(searchByRegion(""))
         dispatch(updateCountries())
-
     }, [])
 
 

@@ -13,16 +13,22 @@ const Searchbar = () => {
 
 
     const searchHandler = event => {
-        let searchValue = event.target.value;
+        const searchValue = event.target.value;
         dispatch(searchByName(searchValue));
         dispatch(updateCountries());
 
     }
 
     const selectHandler = event => {
-        let selectValue = event.target.value;
+        const selectValue = event.target.value;
         dispatch(searchByRegion(selectValue));
         dispatch(updateCountries());
+    }
+
+    const clearBtnHandler = () => {
+        dispatch(searchByName(""))
+        dispatch(searchByRegion(""))
+        dispatch(updateCountries())
     }
 
 
@@ -31,9 +37,10 @@ const Searchbar = () => {
         <div className={classes.searchbar}>
 
             <div className={classes.searchbar__searchpad}>
-                <img src={searchGlass} alt="" className={classes.icon}/>
+                <img src={searchGlass} alt="" className={classes.searchbar__searchpad__icon}/>
                 <input onFocus={(e) => e.target.placeholder = ""} onChange={searchHandler} type="text"
                        placeholder="Search for a country..." value={nameFilter}/>
+                <button onClick={clearBtnHandler} className={classes.searchbar__searchpad__button}>X</button>
             </div>
 
             <div className={classes.searchbar__dropdown}>
