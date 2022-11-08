@@ -54,7 +54,7 @@ const countriesSlice = createSlice({
         },
 
         updateCurrentCountry(state, action) {
-            console.log(action.payload)
+            // console.log(action.payload)
             if (action.payload) {
                 state.currentCountry = state.countries.find((country) => country.name === action.payload)
             } else {
@@ -74,7 +74,7 @@ const countriesSlice = createSlice({
             .addCase(fetchCountries.fulfilled, (state, action) => {
                 state.status = 'succeeded'
 
-                console.log(action.payload)
+                // console.log(action.payload)
 
                 const fetchedCountries = action.payload.map((result, index) => ({
 
